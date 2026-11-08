@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" data-theme="obsidian" data-browser-mode="normal">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bloxcy Search</title>
+    <link rel="stylesheet" href="results.css">
+</head>
+<body>
+    <main>
+        <header class="page-header">
+            <a class="brand" href="#" aria-label="Bloxcy home">B<span>R</span></a>
+            <div class="page-heading">
+                <p class="eyebrow">BLOXCY REVO / SEARCH</p>
+                <h1>Search results</h1>
+            </div>
+            <form id="results-search" class="results-search" role="search">
+                <label class="sr-only" for="results-query">Search again</label>
+                <input id="results-query" type="search" placeholder="Search the web" autocomplete="off">
+                <button type="submit" aria-label="Search">Search</button>
+            </form>
+        </header>
+        <p id="query-label" class="query-label" role="status" aria-live="polite">Loading results…</p>
+
+        <nav class="tabs" role="tablist" aria-label="Search result type">
+            <button class="tab" id="tab-all" role="tab" aria-selected="true" aria-controls="panel-all">All</button>
+            <button class="tab" id="tab-images" role="tab" aria-selected="false" aria-controls="panel-images">Images</button>
+            <button class="tab" id="tab-videos" role="tab" aria-selected="false" aria-controls="panel-videos">Videos</button>
+        </nav>
+
+        <section id="panel-all" role="tabpanel" aria-labelledby="tab-all">
+            <div class="columns">
+                <section>
+                    <div class="section-heading">
+                        <div>
+                            <h2>Top site matches</h2>
+                            <p class="hint">From the local Tranco top-sites database</p>
+                        </div>
+                        <span id="result-count" class="result-count">—</span>
+                    </div>
+                    <div id="site-results" class="site-results"></div>
+                </section>
+                <aside class="right-column">
+                    <section id="dictionary-card" class="card" hidden>
+                        <h2>Dictionary</h2>
+                        <p id="dictionary-status" class="muted" role="status" aria-live="polite">Looking up…</p>
+                        <div id="dictionary-results"></div>
+                    </section>
+                    <section class="web-search-card">
+                        <h2>Continue on the web</h2>
+                        <p class="hint">Search with another provider.</p>
+                        <div id="engine-links"></div>
+                    </section>
+                </aside>
+            </div>
+        </section>
+
+        <section id="panel-images" role="tabpanel" aria-labelledby="tab-images" hidden>
+            <p class="hint">Five images from each source: Wikimedia Commons and Openverse. Results may include duplicates.</p>
+            <p id="images-status" class="status" role="status" aria-live="polite">Select Images to search.</p>
+            <p id="images-errors" class="provider-errors" role="status" aria-live="polite" hidden></p>
+            <div id="images-results" class="image-grid"></div>
+            <button id="load-more-images" class="load-more" type="button" hidden>Load 10 more</button>
+            <a id="open-images" class="provider-link" target="_blank" rel="noreferrer">Search Wikimedia Commons</a>
+            <a id="open-openverse" class="provider-link" target="_blank" rel="noreferrer">Search Openverse</a>
+        </section>
+
+        <section id="panel-videos" role="tabpanel" aria-labelledby="tab-videos" hidden>
+            <p class="hint">YouTube videos ranked using titles and available transcripts</p>
+            <p id="videos-status" class="status" role="status" aria-live="polite">Select Videos to search.</p>
+            <div id="videos-results"></div>
+            <a id="open-videos" class="provider-link" target="_blank" rel="noreferrer">Open YouTube results</a>
+        </section>
+    </main>
+    <script src="results.js"></script>
+</body>
+</html>

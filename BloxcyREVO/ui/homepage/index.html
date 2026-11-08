@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloxcy REVO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-glow bg-glow-top"></div>
+    <div class="bg-glow bg-glow-center"></div>
+
+    <!-- Top floating navigation bar -->
+    <header class="top-nav-bar" id="top-nav-bar">
+        <button type="button" id="mode-selector-btn" class="mode-pill-btn" aria-label="Choose browser experience">
+            <span class="mode-icon" id="mode-icon-display">✦</span>
+            <span id="mode-name-display">Mode: Normal</span>
+        </button>
+
+        <div class="wellness-top-bar" id="wellness-top-bar" hidden>
+            <button id="top-sound-btn" class="wellness-chip-btn" type="button" aria-pressed="false" title="Play ambient calming sounds">
+                <span class="chip-icon">🎵</span> <span id="top-sound-text">Calming sound</span>
+            </button>
+            <button id="top-exercise-btn" class="wellness-chip-btn" type="button" title="Open mindful exercises">
+                <span class="chip-icon">🧘</span> Mindful pause
+            </button>
+            <div class="eye-timer-pill" id="eye-timer-pill" title="15-minute eye wellness reminder">
+                <span class="eye-icon">👁</span>
+                <span>Eye break: <strong id="eye-timer-display">15:00</strong></span>
+            </div>
+        </div>
+
+        <div class="top-nav-spacer"></div>
+
+        <div class="top-actions">
+            <button type="button" id="quick-settings-btn" class="icon-nav-btn" title="Open Settings" aria-label="Settings">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+            </button>
+            <button type="button" id="customize-open" class="icon-nav-btn" title="Customize Page" aria-label="Customize page">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 2a4.5 4.5 0 0 0 0 9 4.5 4.5 0 0 1 0 9"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="homepage">
+        <header class="branding">
+            <h1 class="logo">BLOXCY</h1>
+            <p class="announcement">REVO IS HERE!!</p>
+        </header>
+
+        <form class="search-bar" id="search-form" role="search">
+            <span class="search-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="7.5"></circle>
+                    <line x1="21" y1="21" x2="16.5" y2="16.5"></line>
+                </svg>
+            </span>
+
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Search or enter address..."
+                aria-label="Search the web"
+                autocomplete="off"
+                spellcheck="false"
+            >
+
+            <label class="sr-only" for="search-engine">Search engine</label>
+            <select id="search-engine" aria-label="Search engine">
+                <option value="bloxcy">Bloxcy</option>
+                <option value="google">Google</option>
+                <option value="bing">Bing</option>
+                <option value="duckduckgo">DuckDuckGo</option>
+                <option value="yahoo">Yahoo</option>
+                <option value="brave">Brave</option>
+                <option value="ecosia">Ecosia</option>
+                <option value="startpage">Startpage</option>
+                <option value="qwant">Qwant</option>
+                <option value="mojeek">Mojeek</option>
+                <option value="kagi">Kagi</option>
+                <option value="swisscows">Swisscows</option>
+                <option value="youtube">YouTube</option>
+                <option value="wikipedia">Wikipedia</option>
+            </select>
+
+            <div class="search-badge" title="Press Ctrl+K or / to search" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                    <path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm2 3a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H6zm4 0a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1h-1zm4 0a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1h-1zm4 0a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1h-1zM7 13a1 1 0 0 0-1 1v.2a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V14a1 1 0 0 0-1-1H7z"/>
+                </svg>
+            </div>
+        </form>
+
+        <!-- Wellness Quick Bar (Visible in Wellness Mode) -->
+        <section id="wellness-tools" class="wellness-tools" aria-labelledby="wellness-title" hidden>
+            <div class="wellness-copy">
+                <h2 id="wellness-title">Mindful Workspace</h2>
+                <p>Curved light tabs, calming sounds, and 15-minute eye wellness breaks.</p>
+            </div>
+            <div class="wellness-actions">
+                <button id="open-exercises" class="wellness-button" type="button">Mindful exercises</button>
+                <button id="sound-toggle" class="wellness-button quiet" type="button" aria-pressed="false">Play calming sound</button>
+            </div>
+            <p class="wellness-reminder" id="wellness-reminder">Eye wellness reminder: 15 minutes</p>
+        </section>
+
+        <!-- Quick Links / Shortcuts -->
+        <nav class="shortcuts" aria-label="Quick links">
+            <!-- GitHub -->
+            <a href="https://github.com" class="shortcut-item" aria-label="Open GitHub">
+                <div class="shortcut-tile">
+                    <svg class="shortcut-icon icon-github" viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                    </svg>
+                </div>
+                <span class="shortcut-label">GitHub</span>
+            </a>
+
+            <!-- YouTube -->
+            <a href="https://www.youtube.com" class="shortcut-item" aria-label="Open YouTube">
+                <div class="shortcut-tile">
+                    <svg class="shortcut-icon icon-youtube" viewBox="0 0 24 24" width="30" height="30" fill="#FF0000">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </div>
+                <span class="shortcut-label">YouTube</span>
+            </a>
+
+            <!-- Discord -->
+            <a href="https://discord.com" class="shortcut-item" aria-label="Open Discord">
+                <div class="shortcut-tile">
+                    <svg class="shortcut-icon icon-discord" viewBox="0 0 24 24" width="30" height="30" fill="#5865F2">
+                        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                    </svg>
+                </div>
+                <span class="shortcut-label">Discord</span>
+            </a>
+
+            <!-- Figma -->
+            <a href="https://www.figma.com" class="shortcut-item" aria-label="Open Figma">
+                <div class="shortcut-tile">
+                    <svg class="shortcut-icon icon-figma" viewBox="0 0 38 57" width="20" height="30" fill="none">
+                        <path d="M19 28.5C19 23.2533 23.2533 19 28.5 19C33.7467 19 38 23.2533 38 28.5C38 33.7467 33.7467 38 28.5 38C23.2533 38 19 33.7467 19 28.5Z" fill="#1ABCFE"/>
+                        <path d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z" fill="#0ACF83"/>
+                        <path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="#FF7262"/>
+                        <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E"/>
+                        <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF"/>
+                    </svg>
+                </div>
+                <span class="shortcut-label">Figma</span>
+            </a>
+
+            <!-- ChatGPT -->
+            <a href="https://chatgpt.com" class="shortcut-item" aria-label="Open ChatGPT">
+                <div class="shortcut-tile">
+                    <svg class="shortcut-icon icon-chatgpt" viewBox="0 0 24 24" width="28" height="28" fill="#10A37F">
+                        <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1683a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4947zm-9.66-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1402-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1683a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.8956zm16.0993 3.8558L12.5973 8.3829l2.02-1.1683a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.402-.6815zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.009 9.2148V6.8824a.0804.0804 0 0 1 .0332-.0615l4.954-2.8617a4.4992 4.4992 0 0 1 6.4546 4.672zM8.3077 12.8398l3.6923-2.132 3.6923 2.132v4.264l-3.6923 2.132-3.6923-2.132z"/>
+                    </svg>
+                </div>
+                <span class="shortcut-label">ChatGPT</span>
+            </a>
+
+            <!-- Notion -->
+            <a href="https://www.notion.so" class="shortcut-item" aria-label="Open Notion">
+                <div class="shortcut-tile">
+                    <svg class="shortcut-icon icon-notion" viewBox="0 0 24 24" width="28" height="28" fill="#FFFFFF">
+                        <path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.76c-.42-.326-.98-.7-2.053-.607L3.107 2.18c-.466.046-.56.28-.373.466zm.84 4.246v12.456c0 .746.373 1.026 1.213.98l14.522-.84c.84-.047.933-.56.933-1.166V6.914c0-.606-.233-.886-.793-.84l-15.082.886c-.606.047-.793.373-.793.84zm13.725.933c.093.373 0 .746-.373.793l-.84.233c-.42.093-.7.373-.7.793v7.697c0 .56.326.886.933.84l.886-.093c.373-.047.466.233.466.56v.513c0 .28-.187.327-.42.327l-3.173.187c-.42.046-.7-.094-.7-.514v-.42c0-.326.14-.42.42-.466l.794-.094c.373-.046.466-.28.466-.7v-4.712l-4.153 6.064c-.373.513-.7.653-1.213.653h-.746c-.373 0-.513-.233-.513-.653V9.897c0-.513-.28-.7-.7-.7l-.746.047c-.28.047-.42-.14-.42-.373v-.514c0-.28.187-.373.467-.373l3.313-.187c.466-.046.746.094.746.514v5.412l4.014-5.692c.326-.467.7-.607 1.166-.607h.7c.373 0 .56.187.56.607z"/>
+                    </svg>
+                </div>
+                <span class="shortcut-label">Notion</span>
+            </a>
+        </nav>
+
+        <div class="page-actions">
+            <button type="button" id="add-shortcut" class="quiet-action">+ Add shortcut</button>
+            <button type="button" id="read-page" class="quiet-action" aria-label="Read the page aloud">Read aloud</button>
+        </div>
+
+        <!-- Utility Cards (Hidden in Wellness / Normal for cleaner decluttered UI) -->
+        <section class="utility-grid" id="utility-grid" aria-label="Quick tools">
+            <article class="utility-card" id="scratchpad-card">
+                <div class="card-heading">
+                    <div><p class="card-kicker">QUICK NOTES</p><h2>Scratchpad</h2></div>
+                    <button type="button" class="icon-action" id="read-notes" aria-label="Read scratchpad aloud">Listen</button>
+                </div>
+                <label class="sr-only" for="scratchpad">Scratchpad notes</label>
+                <textarea id="scratchpad" maxlength="12000" placeholder="Jot something down… Notes stay on this device."></textarea>
+                <p class="card-status" id="scratchpad-status" role="status" aria-live="polite">Saved on this device</p>
+            </article>
+            <article class="utility-card" id="dictionary-card">
+                <div class="card-heading">
+                    <div><p class="card-kicker">WORD LOOKUP</p><h2>Dictionary</h2></div>
+                    <span class="tool-mark" aria-hidden="true">Aa</span>
+                </div>
+                <form id="dictionary-form" class="dictionary-form">
+                    <label class="sr-only" for="dictionary-word">Look up a word</label>
+                    <input id="dictionary-word" type="search" maxlength="80" placeholder="Look up a word" autocomplete="off">
+                    <button type="submit">Define</button>
+                </form>
+                <div id="dictionary-result" class="dictionary-result" role="status" aria-live="polite">Definitions from dictionaryapi.dev</div>
+            </article>
+        </section>
+    </main>
+
+    <!-- POP-UP MODAL: "What do you expect from this browser?" -->
+    <dialog id="experience-popup" class="experience-popup" aria-labelledby="experience-title">
+        <div class="popup-container">
+            <header class="popup-header">
+                <span class="popup-eyebrow">BLOXCY REVO / PERSONALIZATION</span>
+                <h2 id="experience-title">What do you expect from this browser?</h2>
+                <p class="popup-subtitle">Choose the experience crafted for your workflow. You can switch modes at any time in Settings.</p>
+            </header>
+
+            <div class="mode-cards-grid" role="radiogroup" aria-label="Browser experience options">
+                <!-- Wellness Card -->
+                <label class="mode-card" data-mode="wellness">
+                    <input type="radio" name="experience-choice" value="wellness">
+                    <div class="mode-card-preview" style="background-image: url('../../assets/calm.jpg');">
+                        <span class="mode-chip chip-wellness">🌿 Wellness</span>
+                    </div>
+                    <div class="mode-card-content">
+                        <h3>Wellness</h3>
+                        <p>Calm atmosphere with soft light theme and curved tabs. Built-in ad & notification blocker, mindful exercises, soothing ambient audio, and 15-minute eye wellness reminders.</p>
+                        <div class="mode-perks">
+                            <span>Ad Blocker</span>
+                            <span>Calm Sounds</span>
+                            <span>Eye Reminders</span>
+                            <span>Curved Tabs</span>
+                        </div>
+                    </div>
+                </label>
+
+                <!-- Gaming Card -->
+                <label class="mode-card" data-mode="gaming">
+                    <input type="radio" name="experience-choice" value="gaming">
+                    <div class="mode-card-preview" style="background-image: url('../../assets/normal.png');">
+                        <span class="mode-chip chip-gaming">⚡ Gaming</span>
+                    </div>
+                    <div class="mode-card-content">
+                        <h3>Gaming</h3>
+                        <p>Vivid, high-performance styling with bold visual contrasts, rapid shortcut navigation, full utility cards, and low latency design.</p>
+                        <div class="mode-perks">
+                            <span>High Contrast</span>
+                            <span>Full Utilities</span>
+                            <span>Quick Access</span>
+                        </div>
+                    </div>
+                </label>
+
+                <!-- Normal Use Card -->
+                <label class="mode-card" data-mode="normal">
+                    <input type="radio" name="experience-choice" value="normal">
+                    <div class="mode-card-preview" style="background-image: url('../../assets/normal.png');">
+                        <span class="mode-chip chip-normal">✦ Normal use</span>
+                    </div>
+                    <div class="mode-card-content">
+                        <h3>Normal use</h3>
+                        <p>Clean, decluttered everyday browsing. The ideal middle ground between wellness and gaming with baseline features and a focused layout.</p>
+                        <div class="mode-perks">
+                            <span>Decluttered UI</span>
+                            <span>Balanced Tools</span>
+                            <span>Clean Layout</span>
+                        </div>
+                    </div>
+                </label>
+
+                <!-- Privacy Card -->
+                <label class="mode-card" data-mode="privacy">
+                    <input type="radio" name="experience-choice" value="privacy">
+                    <div class="mode-card-preview preview-privacy">
+                        <span class="mode-chip chip-privacy">🔒 Privacy</span>
+                    </div>
+                    <div class="mode-card-content">
+                        <h3>Privacy</h3>
+                        <p>Deep obsidian dark background with maximum privacy protection. Automatically deletes cookies after every tab to prevent cross-session tracking.</p>
+                        <div class="mode-perks">
+                            <span>Cookie Wiping</span>
+                            <span>Tracker Shield</span>
+                            <span>Obsidian Dark</span>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            <footer class="popup-footer">
+                <button type="button" id="confirm-experience-btn" class="confirm-btn">Confirm Experience</button>
+            </footer>
+        </div>
+    </dialog>
+
+    <!-- Customize Dialog -->
+    <dialog id="customize-dialog" class="customize-dialog" aria-labelledby="customize-title">
+        <form method="dialog" class="dialog-close-row"><button class="icon-action" aria-label="Close customization">Close</button></form>
+        <h2 id="customize-title">Customize your new tab</h2>
+        <p class="dialog-intro">Choose what appears and make this screen yours.</p>
+        <section class="customize-section">
+            <h3>Browser Mode</h3>
+            <button type="button" id="open-mode-picker-btn" class="secondary-btn" style="width: 100%; padding: 10px; margin-top: 8px;">
+                Change Experience Mode (Wellness, Gaming, Normal, Privacy)
+            </button>
+        </section>
+        <section class="customize-section">
+            <h3>Color theme</h3>
+            <label for="theme-choice" class="sr-only">Choose a color theme</label>
+            <select id="theme-choice">
+                <option value="obsidian">Obsidian</option><option value="light">Light</option>
+                <option value="ocean">Ocean</option><option value="forest">Forest</option>
+            </select>
+        </section>
+        <section class="customize-section">
+            <h3>Background image</h3>
+            <label class="upload-button" for="background-file">Choose an image from this device</label>
+            <input id="background-file" type="file" accept="image/png,image/jpeg,image/webp">
+            <label class="check-row"><input type="checkbox" id="match-background"> <span>Match background image</span></label>
+            <button type="button" id="clear-background" class="quiet-action">Remove background image</button>
+            <p class="card-status">Image and color settings are stored in this browser profile.</p>
+        </section>
+        <section class="customize-section">
+            <h3>Screen layout</h3>
+            <label for="layout-choice" class="sr-only">New tab layout</label>
+            <select id="layout-choice">
+                <option value="centered">Centered</option><option value="compact">Compact</option>
+                <option value="wide">Wide</option>
+            </select>
+        </section>
+        <section class="customize-section visibility-options">
+            <h3>Show on the new tab</h3>
+            <label class="check-row"><input type="checkbox" data-visibility="shortcuts"> <span>Shortcuts</span></label>
+            <label class="check-row"><input type="checkbox" data-visibility="scratchpad"> <span>Scratchpad</span></label>
+            <label class="check-row"><input type="checkbox" data-visibility="dictionary"> <span>Dictionary</span></label>
+        </section>
+        <section class="customize-section security-note">
+            <h3>Browser protection</h3>
+            <p>This browser uses the WebView2 Chromium sandbox. Pop-ups open as tabs, and websites cannot access native host objects.</p>
+        </section>
+    </dialog>
+
+    <!-- Mindful Exercises Dialog -->
+    <dialog id="exercise-dialog" class="exercise-dialog" aria-labelledby="exercise-title">
+        <form method="dialog" class="dialog-close-row">
+            <button class="icon-action" aria-label="Close mindful exercises">✕ Close</button>
+        </form>
+        <h2 id="exercise-title">🧘 Mindful Pause & Exercises</h2>
+        <p class="dialog-intro">Take a moment to restore your focus and relax your body.</p>
+        <div class="exercise-list">
+            <button type="button" data-exercise="breathing">Slow breathing</button>
+            <button type="button" data-exercise="box">Box breathing</button>
+            <button type="button" data-exercise="neck">Gentle neck reset</button>
+            <button type="button" data-exercise="eyes">20-20-20 eye break</button>
+        </div>
+        <article class="exercise-details" id="exercise-details" aria-live="polite">
+            <div class="exercise-placeholder">
+                <p>Select an exercise above to begin a guided session.</p>
+            </div>
+        </article>
+    </dialog>
+
+    <script src="app.js"></script>
+</body>
+</html>

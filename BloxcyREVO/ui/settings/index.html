@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" data-theme="obsidian">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
+    <title>Bloxcy REVO Settings</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../preferences/preferences.js" defer></script>
+    <script src="settings.js" defer></script>
+</head>
+<body>
+    <main class="settings-shell">
+        <aside class="settings-nav" aria-label="Settings navigation">
+            <div class="settings-brand">BLOXCY <span>REVO</span></div>
+            <div class="nav-caption">PREFERENCES</div>
+            <a href="#appearance">Appearance</a>
+            <a href="#performance">Tabs &amp; performance</a>
+            <a href="#profile">Profile &amp; storage</a>
+            <a href="#preferences">Your preferences</a>
+            <div class="nav-caption nav-caption-secondary">QUICK ACCESS</div>
+            <span class="nav-note">Bookmarks, shortcuts and history are in the browser sidebar.</span>
+        </aside>
+        <div class="settings-content">
+        <header class="page-header">
+            <div class="eyebrow">BLOXCY REVO</div>
+            <h1>Settings</h1>
+            <p>Make your browser feel like yours.</p>
+        </header>
+
+        <section class="settings-card" id="appearance" aria-labelledby="appearance-heading">
+            <div class="card-heading">
+                <span class="section-icon" aria-hidden="true">◐</span>
+                <div>
+                    <h2 id="appearance-heading">Appearance</h2>
+                    <p>Choose a color palette for browser chrome and new tabs.</p>
+                </div>
+            </div>
+            <div class="theme-options" role="group" aria-label="Browser theme">
+                <button class="theme-option" type="button" data-theme-choice="obsidian" aria-pressed="false">
+                    <span class="swatch obsidian"></span><span>Obsidian</span>
+                </button>
+                <button class="theme-option" type="button" data-theme-choice="light" aria-pressed="false">
+                    <span class="swatch light"></span><span>Light</span>
+                </button>
+                <button class="theme-option" type="button" data-theme-choice="ocean" aria-pressed="false">
+                    <span class="swatch ocean"></span><span>Ocean</span>
+                </button>
+                <button class="theme-option" type="button" data-theme-choice="forest" aria-pressed="false">
+                    <span class="swatch forest"></span><span>Forest</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="settings-card" id="performance" aria-labelledby="performance-heading">
+            <div class="card-heading">
+                <span class="section-icon" aria-hidden="true">⌁</span>
+                <div>
+                    <h2 id="performance-heading">Tabs &amp; performance</h2>
+                    <p>Inactive tabs are hibernated and reload when you select them.</p>
+                </div>
+            </div>
+            <div class="info-row">
+                <div>
+                    <strong>Active page JavaScript heap</strong>
+                    <span class="detail">An estimate for the selected page, not total browser RAM.</span>
+                </div>
+                <div class="metric" id="memory-value">Waiting for page data</div>
+            </div>
+            <div class="info-row">
+                <div>
+                    <strong>Tab previews</strong>
+                    <span class="detail">Hover over a tab for its title, address, and status.</span>
+                </div>
+                <span class="status-pill">On</span>
+            </div>
+            <button class="secondary-button" id="refresh-memory" type="button">Refresh estimate</button>
+        </section>
+
+        <section class="settings-card" id="profile" aria-labelledby="profile-heading">
+            <div class="card-heading">
+                <span class="section-icon" aria-hidden="true">◎</span>
+                <div>
+                    <h2 id="profile-heading">Profile &amp; storage</h2>
+                    <p>Your local browsing data stays in your Windows account profile.</p>
+                </div>
+            </div>
+            <div class="info-row">
+                <div><strong>Signed in as</strong><span class="detail">Local browser account</span></div>
+                <span class="value" id="profile-username">Loading…</span>
+            </div>
+            <div class="path-block">
+                <span class="detail">Profile folder</span>
+                <code id="profile-path">Loading…</code>
+            </div>
+            <p class="privacy-note">Account passwords are stored as salted hashes. Website passwords, when you choose to save them, are encrypted in your profile folder.</p>
+        </section>
+
+        <section class="settings-card" id="preferences" aria-labelledby="preferences-heading">
+            <div class="card-heading">
+                <span class="section-icon" aria-hidden="true">✦</span>
+                <div>
+                    <h2 id="preferences-heading">Browser mode</h2>
+                    <p>Choose the overall experience. Your mode is saved to this local profile.</p>
+                </div>
+            </div>
+            <div id="browser-mode-options" class="mode-grid" role="radiogroup" aria-label="Browser mode"></div>
+            <p class="privacy-note">Wellness filters common ad and tracker domains. Privacy mode clears cookies when you switch tabs; it does not provide anonymity or block all tracking.</p>
+            <button class="secondary-button" id="save-browser-mode" type="button">Apply browser mode</button>
+        </section>
+
+        <footer class="page-footer">
+            <span>Bloxcy REVO</span>
+            <span id="settings-status" role="status" aria-live="polite">Settings are stored locally.</span>
+        </footer>
+        </div>
+    </main>
+</body>
+</html>

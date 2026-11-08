@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" data-theme="obsidian">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
+    <title>Welcome to Bloxcy REVO</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../preferences/preferences.js" defer></script>
+    <script src="onboarding.js" defer></script>
+</head>
+<body>
+    <main>
+        <p class="eyebrow">BLOXCY REVO / FIRST-RUN SETUP</p>
+        <h1>What do you expect from this browser?</h1>
+        <p class="intro">Choose one experience. You can switch modes at any time in Settings.</p>
+
+        <section class="mode-grid" id="mode-options" aria-label="Browser modes"></section>
+        <section class="privacy-note">
+            <h2>Mode details</h2>
+            <p>Wellness blocks requests to a built-in list of common ad and tracker domains. Website notifications remain blocked in every mode.</p>
+            <p>Privacy mode clears browser cookies when switching tabs. It does not hide your network address or guarantee anonymity.</p>
+        </section>
+
+        <p id="setup-status" class="status" role="status" aria-live="polite"></p>
+        <button id="finish-setup" type="button">Continue with Normal</button>
+    </main>
+</body>
+</html>
